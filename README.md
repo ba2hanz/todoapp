@@ -1,4 +1,4 @@
-# Todo App
+# Todo App [Geliştirme Aşamasında]
 
 Bu proje, basit bir **Todo List** uygulamasıdır. Kullanıcılar, yapılacaklar listesini oluşturabilir, tamamlanan görevleri işaretleyebilir ve görevleri silebilir.
 
