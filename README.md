@@ -1,38 +1,36 @@
-#TODO APP[Geliştirme Aşamasında]
-Bu proje, basit bir Todo List uygulamasıdır. Kullanıcılar, yapılacaklar listesini oluşturabilir, tamamlanan görevleri işaretleyebilir ve görevleri silebilir.
+# Todo App
 
-Özellikler
-Görev Ekleme: Kullanıcı yeni görevler ekleyebilir.
+Bu proje, basit bir **Todo List** uygulamasıdır. Kullanıcılar, yapılacaklar listesini oluşturabilir, tamamlanan görevleri işaretleyebilir ve görevleri silebilir.
 
-Görev Tamamlama: Tamamlanan görevler işaretlenebilir.
+## Özellikler
 
-Görev Silme: Kullanıcı tamamlanan görevleri silebilir.
+- **Görev Ekleme**: Kullanıcı yeni görevler ekleyebilir.
+- **Görev Tamamlama**: Tamamlanan görevler işaretlenebilir.
+- **Görev Silme**: Kullanıcı tamamlanan görevleri silebilir.
+- **Veri Kaydetme**: Uygulama, kullanıcı verilerini yerel depolamada tutar.
+  
+## Kurulum
 
-Veri Kaydetme: Uygulama, kullanıcı verilerini yerel depolamada tutar.
-
-Kurulum
 Bu projeyi çalıştırmak için aşağıdaki adımları takip edebilirsiniz.
 
-1. Depoyu Klonlayın
-bash
-Copy
-Edit
+### 1. Depoyu Klonlayın
+
+```bash
 git clone https://github.com/ba2hanz/todoapp.git
-2. Bağımlılıkları Yükleyin
+```
+
+#### 2. Bağımlılıkları Yükleyin
 Proje dizinine gidin ve gerekli npm paketlerini yükleyin:
 
-bash
-Copy
-Edit
+```bash
 cd todoapp
 npm install
-3. Uygulamayı Başlatın
+```
+##### Uygulamayı Başlatın
 Geliştirme modunda uygulamayı başlatmak için aşağıdaki komutu çalıştırın:
-
-bash
-Copy
-Edit
+```bash
 npm start
+```
 Tarayıcınızda http://localhost:3000 adresine giderek uygulamayı görebilirsiniz.
 
 Teknolojiler
