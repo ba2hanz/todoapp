@@ -26,21 +26,21 @@ Proje dizinine gidin ve gerekli npm paketlerini yükleyin:
 cd todoapp
 npm install
 ```
-##### Uygulamayı Başlatın
+##### 3. Uygulamayı Başlatın
 Geliştirme modunda uygulamayı başlatmak için aşağıdaki komutu çalıştırın:
 ```bash
 npm start
 ```
 Tarayıcınızda http://localhost:3000 adresine giderek uygulamayı görebilirsiniz.
 
-Teknolojiler
+###### Teknolojiler
 React.js: Kullanıcı arayüzünü oluşturmak için.
 
 CSS: Uygulamanın stilini oluşturmak için.
 
 LocalStorage: Kullanıcı verilerini kaydetmek için.
 
-Katkı
+####### Katkı
 Bu projeye katkıda bulunmak isterseniz, aşağıdaki adımları takip edebilirsiniz:
 
 Repo'yu fork'layın.
@@ -51,6 +51,6 @@ Değişikliklerinizi yapın ve commit edin.
 
 Pull request gönderin.
 
-######Lisans
+######## Lisans
 
 Bu proje MIT lisansı ile lisanslanmıştır.
