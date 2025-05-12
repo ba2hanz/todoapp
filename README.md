@@ -19,28 +19,28 @@ Bu projeyi çalıştırmak için aşağıdaki adımları takip edebilirsiniz.
 git clone https://github.com/ba2hanz/todoapp.git
 ```
 
-#### 2. Bağımlılıkları Yükleyin
+### 2. Bağımlılıkları Yükleyin
 Proje dizinine gidin ve gerekli npm paketlerini yükleyin:
 
 ```bash
 cd todoapp
 npm install
 ```
-##### 3. Uygulamayı Başlatın
+### 3. Uygulamayı Başlatın
 Geliştirme modunda uygulamayı başlatmak için aşağıdaki komutu çalıştırın:
 ```bash
 npm start
 ```
 Tarayıcınızda http://localhost:3000 adresine giderek uygulamayı görebilirsiniz.
 
-###### Teknolojiler
+### Teknolojiler
 React.js: Kullanıcı arayüzünü oluşturmak için.
 
 CSS: Uygulamanın stilini oluşturmak için.
 
 LocalStorage: Kullanıcı verilerini kaydetmek için.
 
-####### Katkı
+### Katkı
 Bu projeye katkıda bulunmak isterseniz, aşağıdaki adımları takip edebilirsiniz:
 
 Repo'yu fork'layın.
@@ -51,6 +51,6 @@ Değişikliklerinizi yapın ve commit edin.
 
 Pull request gönderin.
 
-######## Lisans
+### Lisans
 
 Bu proje MIT lisansı ile lisanslanmıştır.
