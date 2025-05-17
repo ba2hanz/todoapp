@@ -9,22 +9,67 @@ function App() {
   const [allTodos,setTodos] = useState([]);
   const [newTitle,setNewTitle] = useState('');
   const [newDescription,setNewDescription] = useState('');
+  const [completedTodos,setCompletedTodos] = useState([]);
 
+  {/*Formdan gelen title ve description değerleriyle yeni bir todo nesnesi oluşturulur.*/}
   const handleAddTodo = () => {
     let newTodoItem = {
       title:newTitle,
       description:newDescription,
     };
+    {/*Mevcut görev listesi kopyalanır ve yeni görev bu dizinin sonuna eklenir*/}
     let updatedTodoArr = [...allTodos];
     updatedTodoArr.push(newTodoItem);
     setTodos(updatedTodoArr);
+  {/*Güncellenmiş görev listesi tarayıcının localStorageına kaydedilir.*/}
     localStorage.setItem('todolist',JSON.stringify(updatedTodoArr));
+    setNewTitle('');
+    setNewDescription('');
   };
 
+  const handleDeleteTodo = (index) => {
+    let reducedTodoArr = [...allTodos];
+    reducedTodoArr.splice(index,1);
+
+    setTodos(reducedTodoArr);
+    localStorage.setItem('todolist',JSON.stringify(reducedTodoArr));
+  };
+  const handleCompleteTodo = (index) => {
+    let now = new Date();
+    let dd = now.getDate();
+    let mm = now.getMonth() + 1;
+    let yyyy = now.getFullYear();
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+    let date = dd + '/' + mm + '/' + yyyy + ' ' + "at" + ' ' + h + ':' + m + ':' + s;
+
+    let filteredItem = {
+      ...allTodos[index],
+      completed:date,
+    }
+    let updateCompletedTodoArr = [...completedTodos];
+    updateCompletedTodoArr.push(filteredItem);
+    setCompletedTodos(updateCompletedTodoArr);
+    handleDeleteTodo(index);
+    localStorage.setItem('completedTodos',JSON.stringify(updateCompletedTodoArr));
+  }
+  const handleDeleteCompletedTodo = (index) => {
+    let reducedCompletedTodoArr = [...completedTodos];
+    reducedCompletedTodoArr.splice(index,1);
+    setCompletedTodos(reducedCompletedTodoArr);
+    localStorage.setItem('completedTodos',JSON.stringify(reducedCompletedTodoArr));
+  }
+
+{/*Sayfa İlk Yüklendiğinde Kaydedilen Görevleri Geri Getirme*/}
   useEffect(()=>{
     let savedTodo = JSON.parse(localStorage.getItem('todolist'));
+    let savedCompletedTodo = JSON.parse(localStorage.getItem('completedTodos'));
     if(savedTodo){
       setTodos(savedTodo);
+    }
+    if(savedCompletedTodo){
+      setCompletedTodos(savedCompletedTodo);
     }
   },[]);
   return (
@@ -54,7 +99,7 @@ function App() {
 
         </div>
         <div className="todo-list" >
-          {allTodos.map((item,index)=>{
+          {isCompleteScreen===false && allTodos.map((item,index)=>{
             return(
              <div className="todo-list-item" key={index}>
               <div className='todo-list-text'>
@@ -62,8 +107,26 @@ function App() {
               <p>{item.description}</p>
               </div>
              <div>
-              <MdDelete className='icon'/>
-              <MdDone className='check-icon'/>
+              <MdDelete className='icon' onClick={()=>handleDeleteTodo(index)} title='Delete?'/>
+              <MdDone className='check-icon' onClick={()=>handleCompleteTodo(index)} title='Completed?'/>
+             </div>
+            </div>
+            )
+          })}
+
+          {isCompleteScreen===true && completedTodos.map((item,index)=>{
+            return(
+             <div className="todo-list-item" key={index}>
+              <div className='todo-list-text'>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <p><small>Completed on: {item.completed}</small></p>
+              </div>
+             <div>
+              <MdDelete className='icon' 
+              onClick={()=>handleDeleteCompletedTodo(index)} 
+              title='Delete?'/>
+        
              </div>
             </div>
             )
