@@ -4,13 +4,13 @@ Bu proje, basit ama işlevsel bir **Todo List** uygulamasıdır. Kullanıcılar 
 
 ## ✨ Özellikler
 
-- **Görev Ekleme**: Yeni görev başlığı ve açıklaması girilerek görev oluşturulabilir.
-- **Görev Tamamlama**: Görevler tamamlandığında işaretlenebilir.
-- **Tamamlanma Zamanı**: Her tamamlanan görev, hangi tarihte ve saatte tamamlandığıyla birlikte kaydedilir.
-- **Görev Silme**: Hem yapılacaklar listesi hem de tamamlananlar listesinden görev silinebilir.
-- **Görev Görünümü**: Yapılacaklar (ToDo) ve tamamlananlar (Completed) ayrı sekmelerde gösterilir.
-- **Otomatik Temizleme**: Görev eklendikten sonra giriş alanları (Title & Description) otomatik olarak temizlenir.
-- **Veri Saklama**: Uygulama, kullanıcı görev verilerini tarayıcının localStorage'ında saklar.
+- ➕ **Görev Ekleme**: Başlık ve açıklama ile yeni görev oluşturabilirsiniz.
+- ✅ **Görev Tamamlama**: Her görev, tamamlandığında işaretlenebilir.
+- 🕒 **Tamamlanma Zamanı**: Görevler, tamamlandığı tarih ve saatle birlikte saklanır.
+- 🗑️ **Görev Silme**: Hem yapılacaklar hem tamamlanan görevler listelerinden silme işlemi yapılabilir.
+- 📂 **Görev Görünümü**: Görevler, "ToDo" ve "Completed" olarak sekmelere ayrılır.
+- 🧹 **Otomatik Temizleme**: Yeni görev eklendikten sonra giriş alanları otomatik temizlenir.
+- 💾 **Veri Saklama**: Görevler `localStorage` kullanılarak tarayıcıda saklanır.
 
 ## 🚀 Kurulum
 

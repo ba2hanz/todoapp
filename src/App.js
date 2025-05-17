@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React,{useState,useEffect} from 'react';
-import { MdDelete } from "react-icons/md";
-import { MdDone } from "react-icons/md";
+import { MdDelete, MdDone, MdEdit } from "react-icons/md";
 
 function App() {
   const [isCompleteScreen,setIsCompleteScreen] = useState(false);
@@ -10,6 +9,8 @@ function App() {
   const [newTitle,setNewTitle] = useState('');
   const [newDescription,setNewDescription] = useState('');
   const [completedTodos,setCompletedTodos] = useState([]);
+  const [currentEdit,setCurrentEdit] = useState(null);
+  const [currentEditedItem,setCurrentEditedItem] = useState({});
 
   {/*Formdan gelen title ve description değerleriyle yeni bir todo nesnesi oluşturulur.*/}
   const handleAddTodo = () => {
@@ -60,6 +61,29 @@ function App() {
     setCompletedTodos(reducedCompletedTodoArr);
     localStorage.setItem('completedTodos',JSON.stringify(reducedCompletedTodoArr));
   }
+  const handleEdit = (ind, item) => {
+    setCurrentEdit(ind);
+    setCurrentEditedItem(item);
+  }
+  const handleUpdateTitle = (value) => {
+    let updatedTodoArr = [...allTodos];
+    updatedTodoArr[currentEdit].title = value;
+    setTodos(updatedTodoArr);
+  }
+  const handleUpdateDescription = (value) => {
+    let updatedTodoArr = [...allTodos];
+    updatedTodoArr[currentEdit].description = value;
+    setTodos(updatedTodoArr);
+  }
+  const handleUpdateTodo = (index) => {
+    setCurrentEdit(null);
+    setCurrentEditedItem({});
+    localStorage.setItem('todolist',JSON.stringify(allTodos));
+  }
+  const handleCancelEdit = () => {
+    setCurrentEdit(null);
+    setCurrentEditedItem({});
+  }
 
 {/*Sayfa İlk Yüklendiğinde Kaydedilen Görevleri Geri Getirme*/}
   useEffect(()=>{
@@ -100,18 +124,46 @@ function App() {
         </div>
         <div className="todo-list" >
           {isCompleteScreen===false && allTodos.map((item,index)=>{
-            return(
-             <div className="todo-list-item" key={index}>
-              <div className='todo-list-text'>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              </div>
-             <div>
-              <MdDelete className='icon' onClick={()=>handleDeleteTodo(index)} title='Delete?'/>
-              <MdDone className='check-icon' onClick={()=>handleCompleteTodo(index)} title='Completed?'/>
-             </div>
-            </div>
-            )
+            if(currentEdit===index){
+              return(
+                <div className='edit-input' key={index}>
+
+                  <input type='text' 
+                  value={currentEditedItem.title} 
+                  onChange={(e)=>handleUpdateTitle(e.target.value)}/>
+
+                  <input type='text' 
+                  value={currentEditedItem.description} 
+                  onChange={(e)=>handleUpdateDescription(e.target.value)}/>
+
+                  <button type='button' onClick={()=>handleUpdateTodo(index)}>Update</button>
+                  <button type='button' onClick={handleCancelEdit}>Cancel</button>
+
+                </div>
+              );
+            } else {
+              return(
+                <div className="todo-list-item" key={index}>
+                  <div className='todo-list-text'>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                  <div>
+                    <MdDelete className='icon' 
+                    onClick={()=>handleDeleteTodo(index)} 
+                    title='Delete?'/>
+
+                    <MdDone className='check-icon' 
+                    onClick={()=>handleCompleteTodo(index)} 
+                    title='Completed?'/>
+
+                    <MdEdit className='edit-icon' 
+                    onClick={()=>handleEdit(index, item)} 
+                    title='Edit?'/>
+                  </div>
+                </div>
+              );
+            }
           })}
 
           {isCompleteScreen===true && completedTodos.map((item,index)=>{
