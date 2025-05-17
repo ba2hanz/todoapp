@@ -1,17 +1,20 @@
 # Todo App [Geliştirme Aşamasında]
 
-Bu proje, basit bir **Todo List** uygulamasıdır. Kullanıcılar, yapılacaklar listesini oluşturabilir, tamamlanan görevleri işaretleyebilir ve görevleri silebilir.
+Bu proje, basit ama işlevsel bir **Todo List** uygulamasıdır. Kullanıcılar yapılacak görevler ekleyebilir, tamamlananları işaretleyebilir, silebilir ve görevlerin durumlarına göre filtreleyebilir.
 
-## Özellikler
+## ✨ Özellikler
 
-- **Görev Ekleme**: Kullanıcı yeni görevler ekleyebilir.
-- **Görev Tamamlama**: Tamamlanan görevler işaretlenebilir.
-- **Görev Silme**: Kullanıcı tamamlanan görevleri silebilir.
-- **Veri Kaydetme**: Uygulama, kullanıcı verilerini yerel depolamada tutar.
-  
-## Kurulum
+- **Görev Ekleme**: Yeni görev başlığı ve açıklaması girilerek görev oluşturulabilir.
+- **Görev Tamamlama**: Görevler tamamlandığında işaretlenebilir.
+- **Tamamlanma Zamanı**: Her tamamlanan görev, hangi tarihte ve saatte tamamlandığıyla birlikte kaydedilir.
+- **Görev Silme**: Hem yapılacaklar listesi hem de tamamlananlar listesinden görev silinebilir.
+- **Görev Görünümü**: Yapılacaklar (ToDo) ve tamamlananlar (Completed) ayrı sekmelerde gösterilir.
+- **Otomatik Temizleme**: Görev eklendikten sonra giriş alanları (Title & Description) otomatik olarak temizlenir.
+- **Veri Saklama**: Uygulama, kullanıcı görev verilerini tarayıcının localStorage'ında saklar.
 
-Bu projeyi çalıştırmak için aşağıdaki adımları takip edebilirsiniz.
+## 🚀 Kurulum
+
+Bu projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları takip edin:
 
 ### 1. Depoyu Klonlayın
 
@@ -19,38 +22,50 @@ Bu projeyi çalıştırmak için aşağıdaki adımları takip edebilirsiniz.
 git clone https://github.com/ba2hanz/todoapp.git
 ```
 
-### 2. Bağımlılıkları Yükleyin
-Proje dizinine gidin ve gerekli npm paketlerini yükleyin:
+### 2. Proje Klasörüne Geçin
 
 ```bash
 cd todoapp
+```
+
+### 3. Bağımlılıkları Yükleyin
+
+```bash
 npm install
 ```
-### 3. Uygulamayı Başlatın
-Geliştirme modunda uygulamayı başlatmak için aşağıdaki komutu çalıştırın:
+
+### 4. Uygulamayı Başlatın
+
 ```bash
 npm start
 ```
-Tarayıcınızda http://localhost:3000 adresine giderek uygulamayı görebilirsiniz.
 
-### Teknolojiler
-React.js: Kullanıcı arayüzünü oluşturmak için.
+Tarayıcınızda http://localhost:3000 adresine giderek uygulamayı görüntüleyebilirsiniz.
 
-CSS: Uygulamanın stilini oluşturmak için.
+## 🛠️ Kullanılan Teknolojiler
 
-LocalStorage: Kullanıcı verilerini kaydetmek için.
+- React.js – Arayüzü oluşturmak için
+- CSS – Stil ve düzenlemeler için
+- LocalStorage – Verilerin kalıcı olarak saklanması için
 
-### Katkı
-Bu projeye katkıda bulunmak isterseniz, aşağıdaki adımları takip edebilirsiniz:
+## 🤝 Katkı
 
-Repo'yu fork'layın.
+Bu projeye katkıda bulunmak için:
 
-Yeni bir branch oluşturun.
+```bash
+# Repoyu fork'layın
+# Yeni bir branch oluşturun
+git checkout -b yeni-ozellik
 
-Değişikliklerinizi yapın ve commit edin.
+# Değişikliklerinizi yapın ve commit edin
+git commit -m "Yeni özellik eklendi"
 
-Pull request gönderin.
+# Push yapın
+git push origin yeni-ozellik
+```
 
-### Lisans
+Daha sonra bir **Pull Request** gönderin.
+
+## 📜 Lisans
 
 Bu proje MIT lisansı ile lisanslanmıştır.
