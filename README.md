@@ -14,8 +14,7 @@ Bu proje, basit ama işlevsel bir **Todo List** uygulamasıdır. Kullanıcılar 
 
 ## 🚀 Kurulum
 
-Bu projeyi canlı ortamda test edebilmek içim:
-
+Bu projeyi canlı ortamda test edebilmek için:
 https://todo.ba2hanz.software
 
 
