@@ -14,6 +14,11 @@ Bu proje, basit ama işlevsel bir **Todo List** uygulamasıdır. Kullanıcılar 
 
 ## 🚀 Kurulum
 
+Bu projeyi canlı ortamda test edebilmek içim:
+```bash
+https://todo.ba2hanz.software
+```
+
 Bu projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları takip edin:
 
 ### 1. Depoyu Klonlayın
